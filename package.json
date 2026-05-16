@@ -1,0 +1,21 @@
+{
+  "name": "modwingman",
+  "version": "0.1.0",
+  "description": "AI-assisted ban appeal triage for subreddit moderators",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "devvit playtest",
+    "upload": "devvit upload"
+  },
+  "dependencies": {
+    "@devvit/server": "^0.12.23",
+    "@devvit/web": "^0.12.23",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

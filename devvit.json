@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "modwingman",
+  "server": {
+    "entry": "src/server/index.js"
+  },
+  "permissions": {
+    "http": {
+      "enable": true,
+      "domains": ["generativelanguage.googleapis.com"]
+    },
+    "reddit": {
+      "enable": true,
+      "scope": "moderator",
+      "asUser": ["SUBMIT_COMMENT"]
+    },
+    "redis": true
+  },
+  "triggers": {
+    "onModMail": "/internal/triggers/modmail"
+  },
+  "settings": {
+    "global": {
+      "gemini_api_key": {
+        "type": "string",
+        "label": "Google AI Studio API key (for Gemini 2.5 Flash)",
+        "helpText": "Get a free key at aistudio.google.com/apikey. Free tier covers typical hackathon-level traffic.",
+        "placeholder": "AIza...",
+        "isSecret": true
+      }
+    }
+  }
+}
