@@ -23,7 +23,12 @@ app.post("/internal/triggers/modmail", async (req, res) => {
     return;
   }
 
-  const apiKey = await settings.get<string>("gemini_api_key");
+  // v0: read from gitignored src/server/secret.ts. Devvit settings flow
+  // worked on the schema layer but Reddit's `settings set` server-side
+  // validator rejected our gemini_api_key field on Devvit 0.12.23 +
+  // @devvit/web; we time-boxed the fight and v0.2 will restore BYO.
+  const { GEMINI_API_KEY } = await import("./secret.js");
+  const apiKey = (await settings.get<string>("gemini_api_key")) || GEMINI_API_KEY;
   if (!apiKey) {
     res.json({ skipped: "gemini_api_key not configured" });
     return;

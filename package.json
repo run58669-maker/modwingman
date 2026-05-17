@@ -1,6 +1,6 @@
 {
   "name": "modwingman",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "AI-assisted ban appeal triage for subreddit moderators",
   "private": true,
   "scripts": {
@@ -9,13 +9,15 @@
     "upload": "devvit upload"
   },
   "dependencies": {
-    "@devvit/server": "^0.12.23",
-    "@devvit/web": "^0.12.23",
+    "@devvit/server": "0.12.23",
+    "@devvit/web": "0.12.23",
     "express": "^4.21.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.0",
     "typescript": "^5.7.2"
-  }
+  },
+  "type": "module",
+  "license": "BSD-3-Clause"
 }
